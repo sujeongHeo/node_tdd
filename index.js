@@ -8,7 +8,12 @@ function logger(req, res, next){
     next(); // 미들웨어는 next() 를 호출해야 다음 로직 수행 가능 ! 
 }
 
+function logger2(req, res, next){
+    console.log('I am logger2');
+    next();
+}
 app.use(logger);
+app.use(logger2);
  
 app.listen(3000, function(){
     console.log('Server is running');
