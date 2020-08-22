@@ -1,10 +1,9 @@
-var users = [
-    { id: 1, name: 'alice'},
-    { id: 2, name: 'bek'}, 
-    { id: 3, name: 'chris'}
-];
-
-
+// var users = [
+//     { id: 1, name: 'alice'},
+//     { id: 2, name: 'bek'}, 
+//     { id: 3, name: 'chris'}
+// ];
+const models = require('../../models');
 const index = function (req, res) {
     req.query.limit = req.query.limit || 10;
     const limit = parseInt(req.query.limit, 10);
@@ -13,7 +12,11 @@ const index = function (req, res) {
             .status(400)
             .end();
     }
-    res.json(users.slice(0, limit));
+    models.User.findAll({})
+        .then(users => {
+            res.json(users);
+        })
+    // res.json(users.slice(0, limit));
 };
 
 const show = function(req, res){
