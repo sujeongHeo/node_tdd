@@ -1,4 +1,11 @@
 const app = require('../index');
-app.listen(3000, () =>{
-    console.log('Server is ruccinnsdf in 3000');
+const syncDb = require('./sync-db');
+
+syncDb().then(_=>{
+    console.log('Sync datbase!');
+    app.listen(3000, () =>{
+        console.log('Server is ruccinnsdf in 3000');
+    })
 })
+
+
