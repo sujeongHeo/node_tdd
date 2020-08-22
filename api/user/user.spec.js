@@ -4,7 +4,7 @@ const should = require('should');
 const app = require('../../');
 const models = require('../../models');
 
-describe.only('GET /users 는', ()=>{
+describe('GET /users 는', ()=>{
     describe('성공시', ()=>{
 
         const users = [
@@ -41,7 +41,7 @@ describe.only('GET /users 는', ()=>{
     })
 });
 
-describe('GET /users/:id는 ', ()=> {
+describe.only('GET /users/:id는 ', ()=> {
     describe('성공시', () => {
     it('id 가 1인 유저 객체를 반환한ㄷ', (done) => {
         request(app)
