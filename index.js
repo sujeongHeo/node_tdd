@@ -13,5 +13,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use('/users', user);
+app.use('/photo', photo);
+app.use('/users', user);
 
+
+//테스트 코드 만들고 비즈니스 로직을 만들자ㅏ ...
 module.exports = app;
